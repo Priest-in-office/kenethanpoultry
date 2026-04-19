@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1A3C2A;
+  --color-forest-light: #2A5C3E;
+  --color-sage: #8BA888;
+  --color-sage-light: #A8C4A5;
+  --color-lime: #C8E64E;
+  --color-lime-hover: #B8D63E;
+  --color-cream: #FAF8F3;
+  --color-cream-dark: #F0EDE5;
+  --color-cream-darker: #E5E0D5;
+  --color-charcoal: #2C2C2C;
+  --color-warm-gray: #6B6B6B;
+  --color-warm-gray-light: #9A9A9A;
+  --color-amber: #D4A847;
+  --color-terracotta: #C47B5B;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Global resets */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: #FAF8F3; overflow-x: hidden; }
+
+img { max-width: 100%; display: block; }
+
+ul, ol { list-style: none; }
+
+::selection { background-color: #C8E64E; color: #1A3C2A; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAF8F3; }
+::-webkit-scrollbar-thumb { background: #8BA888; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #1A3C2A; }
+
+/* Scrollbar hide utility for tab bars */
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Tailwind doesn't support bg-white/8 — add manual opacity variants */
+.bg-white\/8  { background-color: rgba(255,255,255,0.08); }
+.bg-white\/12 { background-color: rgba(255,255,255,0.12); }
+.bg-white\/92 { background-color: rgba(255,255,255,0.92); }
