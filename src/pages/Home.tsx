@@ -1,21 +1,34 @@
+import { useReveal } from '../hooks/useReveal';
+import { useScrollState } from '../hooks/useScrollState';
+import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 import Hero from '../components/home/Hero';
-import StatsBar from '../components/home/StatsBar';
-import ProductShowcase from '../components/home/ProductShowcase';
-import OurPromise from '../components/home/OurPromise';
-import FarmJourney from '../components/home/FarmJourney';
-import Testimonials from '../components/home/Testimonials';
-import Newsletter from '../components/home/Newsletter';
+import Strip from '../components/home/Strip';
+import Livestock from '../components/home/Livestock';
+import Shop from '../components/home/Shop';
+import Wholesale from '../components/home/Wholesale';
+import Gallery from '../components/home/Gallery';
+import FAQ from '../components/home/FAQ';
+import Contact from '../components/home/Contact';
 
 export default function Home() {
+  useReveal();
+  const { scrolled, active } = useScrollState();
+
   return (
-    <main id="home-page">
-      <Hero />
-      <StatsBar />
-      <ProductShowcase />
-      <OurPromise />
-      <FarmJourney />
-      <Testimonials />
-      <Newsletter />
-    </main>
+    <>
+      <Navbar active={active} scrolled={scrolled} />
+      <main>
+        <Hero />
+        <Strip />
+        <Livestock />
+        <Shop />
+        <Wholesale />
+        <Gallery />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
